@@ -1,0 +1,87 @@
+/* General Reset */
+:global(body) { /* this will apply to <body> */ margin: 0; padding: 0; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+/* Fade-in Animation */ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+  body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /* Header Styles */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #ccc;
+  }
+  .nav-list {
+    display: flex;
+    list-style: none;
+    background-color: rgba(30, 30, 30, 1); 
+    font-family: 'Arial', sans-serif; 
+    height: 80px; 
+  }
+  .link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }

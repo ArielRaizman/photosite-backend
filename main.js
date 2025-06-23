@@ -2,12 +2,12 @@
 let imageData = [];
 let currentImageIndex = -1;
 let filteredImages = [];
-const baseImagePath = '../assets';
+const baseImagePath = '/assets';
 
 // Load the JSON data when the page loads
 window.addEventListener('load', async () => {
     try {
-        const response = await fetch('image-data.json');
+        const response = await fetch('/api/image-data');
         imageData = await response.json();
         filteredImages = [...imageData];
         updateResultsList();
@@ -108,7 +108,7 @@ document.getElementById('saveButton').addEventListener('click', async () => {
     }
     
     try {
-        const response = await fetch('image-data.json', {
+        const response = await fetch('/api/image-data', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

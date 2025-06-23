@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 // Configuration for external images path - CHANGE THIS TO YOUR EXTERNAL DIRECTORY PATH
-const EXTERNAL_IMAGES_PATH = 'C:/path/to/your/external/images';
+const EXTERNAL_IMAGES_PATH = '/assets';
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -19,7 +19,7 @@ app.use('/external-images', express.static(EXTERNAL_IMAGES_PATH));
 // GET endpoint to fetch image data
 app.get('/api/image-data', async (req, res) => {
     try {
-        const data = await fs.readFile(path.join(__dirname, 'image-data.json'), 'utf8');
+        const data = await fs.readFile(path.join(__dirname, '/assets/image-data.json'), 'utf8');
         res.json(JSON.parse(data));
     } catch (error) {
         console.error('Error reading image data:', error);
@@ -31,7 +31,7 @@ app.get('/api/image-data', async (req, res) => {
 app.put('/api/image-data', async (req, res) => {
     try {
         await fs.writeFile(
-            path.join(__dirname, 'image-data.json'),
+            path.join(__dirname, '/assets/image-data.json'),
             JSON.stringify(req.body, null, 2),
             'utf8'
         );
